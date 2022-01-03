@@ -3,6 +3,8 @@ import { menu } from "./menu";
 import { contactPage } from "./contact-page";
 import { navbar } from "./navbar";
 
+import "./style/index.css";
+
 const clearContent = (node) => {
   while (node.firstChild) {
     node.removeChild(node.firstChild);
@@ -12,10 +14,15 @@ const clearContent = (node) => {
 const serveSite = () => {
   const contentDiv = document.querySelector("div#content");
   contentDiv.appendChild(navbar());
+
+  const pageDivContainer = document.createElement("div");
+  pageDivContainer.classList.add("container");
+
   const pageDiv = document.createElement("div");
   pageDiv.setAttribute("id", "pageContent");
-  contentDiv.appendChild(pageDiv);
-  homepage(pageDiv);
+  pageDiv.classList.add("pageDiv");
+  pageDivContainer.appendChild(pageDiv);
+  contentDiv.appendChild(pageDivContainer);
 
   const homeButton = document.querySelector("#button_home");
   const menuButton = document.querySelector("#button_menu");
@@ -33,6 +40,8 @@ const serveSite = () => {
     clearContent(pageDiv);
     contactPage(pageDiv);
   });
+
+  homepage(pageDiv);
 };
 
 serveSite();

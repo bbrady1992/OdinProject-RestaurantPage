@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  background-image: url("../resources/bagel-background.jpg");
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.pageDiv {
+  background-color: white;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  color: #8b4513;
+}

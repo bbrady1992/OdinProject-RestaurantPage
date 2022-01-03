@@ -1,3 +1,5 @@
+import "./style/navbar-style.css";
+
 const navbar = () => {
   const createNavbarButton = (navbar, id, text) => {
     const button = document.createElement("button");
